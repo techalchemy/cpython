@@ -20,7 +20,7 @@ if NOT "%1"=="" (set regrtest_args=%regrtest_args% %1) & shift & goto CheckOpts
 
 if "%arm32_ssh%"=="true" goto :Arm32Ssh
 
-call "%here%..\..\PCbuild\rt.bat" %rt_opts% -uall -rwW --slowest --timeout=1200 --fail-env-changed %regrtest_args%
+call "%here%..\..\PCbuild\rt.bat" %rt_opts% -uall test_datetime -rwW --slowest --timeout=1200 --fail-env-changed %regrtest_args%
 exit /b %ERRORLEVEL%
 
 :Arm32Ssh
